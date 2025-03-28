@@ -9,30 +9,115 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id              String   @id @default(uuid())
-  gender          String
-  name            String
-  email           String   @unique
-  phone           String
-  zipCode         String
-  address         String
-  age             String
-  complementary   String[]
-  goal            String[]
-  hairType        String
-  hairConsider    String
-  hairLength      String
-  washFrequency   String
-  chemicalProcess String
-  hairLoss        String
-  yourWireAre     String
-  dandruff        String
-  frizzType       String
-  authKey         String
+  id                String          @id @default(uuid())
+  gender            String
+  name              String
+  email             String          @unique
+  phone             String
+  zipCode           String
+  address           String
+  age               Age             @relation(fields: [ageId], references: [id])
+  ageId             String
+  complementary     Complementary[]
+  goal              Goal[]
+  hairType          HairType        @relation(fields: [hairTypeId], references: [id])
+  hairTypeId        String
+  hairConsider      HairConsider    @relation(fields: [hairConsiderId], references: [id])
+  hairConsiderId    String
+  hairLength        HairLength      @relation(fields: [hairLengthId], references: [id])
+  hairLengthId      String
+  washFrequency     WashFrequency   @relation(fields: [washFrequencyId], references: [id])
+  washFrequencyId   String
+  chemicalProcess   ChemicalProcess @relation(fields: [chemicalProcessId], references: [id])
+  chemicalProcessId String
+  hairLoss          HairLoss        @relation(fields: [hairLossId], references: [id])
+  hairLossId        String
+  yourHairAre       YourHairAre     @relation(fields: [yourHairAreId], references: [id])
+  yourHairAreId     String
+  dandruff          Dandruff        @relation(fields: [dandruffId], references: [id])
+  dandruffId        String
+  frizzType         FrizzType       @relation(fields: [frizzTypeId], references: [id])
+  frizzTypeId       String
+  authKey           String
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+model Age {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model Complementary {
+  id     String  @id @default(uuid())
+  label  String
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
+
+model Goal {
+  id     String  @id @default(uuid())
+  label  String
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
+
+model HairType {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model HairConsider {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model HairLength {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model WashFrequency {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model ChemicalProcess {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model HairLoss {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model YourHairAre {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model Dandruff {
+  id    String @id @default(uuid())
+  label String
+  users User[]
+}
+
+model FrizzType {
+  id    String @id @default(uuid())
+  label String
+  users User[]
 }
