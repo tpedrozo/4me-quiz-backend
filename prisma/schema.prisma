@@ -30,7 +30,7 @@ model User {
   washFrequency   String
   chemicalProcess String
   hairLoss        String
-  yourHairAre     String
+  yourWireAre     String
   dandruff        String
   frizzType       String
   authKey         String
