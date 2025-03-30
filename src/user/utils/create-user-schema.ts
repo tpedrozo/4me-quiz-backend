@@ -1,7 +1,6 @@
 import { z } from 'zod';
 
-const userSchema = z.object({
-  id: z.string().uuid().optional(),
+export const createUserSchema = z.object({
   gender: z.string(),
   name: z.string(),
   email: z.string().email(),
@@ -17,12 +16,10 @@ const userSchema = z.object({
   washFrequency: z.string(),
   chemicalProcess: z.string(),
   hairLoss: z.string(),
-  yourWireAre: z.string(),
+  yourHairAre: z.string(),
   dandruff: z.string(),
   frizzType: z.string(),
   authKey: z.string(),
 });
 
-export default userSchema;
-
-export type User = z.infer<typeof userSchema>;
+export type CreateUserSchema = z.infer<typeof createUserSchema>;

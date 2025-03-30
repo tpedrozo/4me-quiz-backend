@@ -1,0 +1,62 @@
+import { IsArray, IsEmail, IsString } from 'class-validator';
+
+export class CreateUserDto {
+  @IsString()
+  gender: string;
+
+  @IsString()
+  name: string;
+
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  phone: string;
+
+  @IsString()
+  zipCode: string;
+
+  @IsString()
+  address: string;
+
+  @IsString()
+  age: string;
+
+  @IsArray()
+  @IsString({ each: true })
+  complementary: string[];
+
+  @IsArray()
+  @IsString({ each: true })
+  goal: string[];
+
+  @IsString()
+  hairType: string;
+
+  @IsString()
+  hairConsider: string;
+
+  @IsString()
+  hairLength: string;
+
+  @IsString()
+  washFrequency: string;
+
+  @IsString()
+  chemicalProcess: string;
+
+  @IsString()
+  hairLoss: string;
+
+  @IsString()
+  yourHairAre: string;
+
+  @IsString()
+  dandruff: string;
+
+  @IsString()
+  frizzType: string;
+
+  @IsString()
+  authKey: string;
+}

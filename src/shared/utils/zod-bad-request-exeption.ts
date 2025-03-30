@@ -1,11 +1,8 @@
 import { BadRequestException } from '@nestjs/common';
+import { SafeParseError } from 'zod';
 
 export const zodBadRequestException = (validation: {
-  error: { errors: { path: string; message: string }[] };
+  error: SafeParseError<any>;
 }): BadRequestException => {
-  throw new BadRequestException(
-    validation.error.errors
-      .map((error) => `${error.path}: ${error.message}`)
-      .join(', '),
-  );
+  throw new BadRequestException(validation.error.error.issues);
 };
