@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { createUserSchema } from './utils/create-user-schema';
-import { zodBadRequestException } from 'src/shared/utils/zod-bad-request-exeption';
+import { zodBadRequestException } from '../shared/utils/zod-bad-request-exeption';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { updateUserSchema } from './utils/update-user-schema';
 
