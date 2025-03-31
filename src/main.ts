@@ -8,8 +8,9 @@ async function bootstrap() {
     origin: [
       'https://4me-new-quiz.vercel.app',
       'https://4me-quiz-backend.vercel.app',
+      'http://localhost:3000',
     ],
-    credentials: true,
+    credentials: false,
     exposedHeaders: ['Content-Length', 'X-My-Custom-Header'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
