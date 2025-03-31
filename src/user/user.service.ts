@@ -24,7 +24,7 @@ export class UserService {
     })) as UpdateUserDto;
 
     if (userExists) {
-      await this.update(userExists.id, userExists);
+      throw new NotFoundException('User already exists');
     }
 
     const user = await this.prisma.user.create({
