@@ -1,6 +1,6 @@
 import { IsArray, IsEmail, IsString } from 'class-validator';
 
-export class CreateUserDto {
+export class CreateLeadDto {
   @IsString()
   gender: string;
 
@@ -43,8 +43,8 @@ export class CreateUserDto {
   washFrequency: string;
 
   @IsArray()
-  @IsString()
-  chemicalProcess: string;
+  @IsString({ each: true })
+  chemicalProcess: string[];
 
   @IsString()
   hairLoss: string;

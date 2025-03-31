@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const createUserSchema = z.object({
+export const createLeadSchema = z.object({
   gender: z.string(),
   name: z.string(),
   email: z.string().email(),
@@ -22,4 +22,4 @@ export const createUserSchema = z.object({
   authKey: z.string(),
 });
 
-export type CreateUserSchema = z.infer<typeof createUserSchema>;
+export type CreateLeadSchema = z.infer<typeof createLeadSchema>;

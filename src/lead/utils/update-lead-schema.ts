@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const updateUserSchema = z.object({
+export const updateLeadSchema = z.object({
   id: z.string(),
   gender: z.string(),
   name: z.string(),
@@ -15,12 +15,12 @@ export const updateUserSchema = z.object({
   hairConsider: z.string(),
   hairLength: z.string(),
   washFrequency: z.string(),
-  chemicalProcess: z.string(),
+  chemicalProcess: z.array(z.string()),
   hairLoss: z.string(),
-  yourHairAre: z.string(),
+  yourWireAre: z.string(),
   dandruff: z.string(),
   frizzType: z.string(),
   authKey: z.string(),
 });
 
-export type UpdateUserSchema = z.infer<typeof updateUserSchema>;
+export type UpdateLeadSchema = z.infer<typeof updateLeadSchema>;
