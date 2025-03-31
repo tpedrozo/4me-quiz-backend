@@ -16,7 +16,7 @@ export const createUserSchema = z.object({
   washFrequency: z.string(),
   chemicalProcess: z.string(),
   hairLoss: z.string(),
-  yourHairAre: z.string(),
+  yourWireAre: z.string(),
   dandruff: z.string(),
   frizzType: z.string(),
   authKey: z.string(),

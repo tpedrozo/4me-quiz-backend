@@ -49,7 +49,7 @@ export class CreateUserDto {
   hairLoss: string;
 
   @IsString()
-  yourHairAre: string;
+  yourWireAre: string;
 
   @IsString()
   dandruff: string;
