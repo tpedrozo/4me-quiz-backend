@@ -10,12 +10,12 @@ async function bootstrap() {
       'https://4me-quiz-backend.vercel.app',
       'http://localhost:3000',
     ],
-    credentials: false,
+    credentials: true,
     exposedHeaders: ['Content-Length', 'X-My-Custom-Header'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
     optionsSuccessStatus: 204,
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Your-Custom-Header'],
   });
   app.useGlobalPipes(
     new ValidationPipe({
