@@ -9,10 +9,10 @@ async function bootstrap() {
     origin: true,
     credentials: true,
     exposedHeaders: ['Content-Length', 'X-My-Custom-Header'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
-    allowedHeaders: ['Content-Type', 'Authorization', 'Your-Custom-Header'],
+    allowedHeaders: ['Content-Type'],
   });
   app.use(
     helmet({
