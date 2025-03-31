@@ -7,6 +7,11 @@ async function bootstrap() {
   app.enableCors({
     origin: 'https://4me-new-quiz.vercel.app',
     credentials: true,
+    exposedHeaders: ['Content-Length', 'X-My-Custom-Header'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
   app.useGlobalPipes(
     new ValidationPipe({
