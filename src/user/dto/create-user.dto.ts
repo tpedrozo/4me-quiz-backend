@@ -42,6 +42,7 @@ export class CreateUserDto {
   @IsString()
   washFrequency: string;
 
+  @IsArray()
   @IsString()
   chemicalProcess: string;
 

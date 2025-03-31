@@ -28,7 +28,7 @@ model User {
   hairConsider    String
   hairLength      String
   washFrequency   String
-  chemicalProcess String
+  chemicalProcess String[]
   hairLoss        String
   yourWireAre     String
   dandruff        String
