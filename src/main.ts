@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -13,6 +14,11 @@ async function bootstrap() {
     optionsSuccessStatus: 204,
     allowedHeaders: ['Content-Type', 'Authorization', 'Your-Custom-Header'],
   });
+  app.use(
+    helmet({
+      contentSecurityPolicy: false,
+    }),
+  );
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
