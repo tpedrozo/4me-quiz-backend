@@ -38,6 +38,7 @@ model Contact {
   name      String
   email     String   @unique
   message   String
+  origin    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
