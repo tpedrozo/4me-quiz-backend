@@ -20,6 +20,9 @@ export class CreateLeadDto {
   address: string;
 
   @IsString()
+  number: string;
+
+  @IsString()
   age: string;
 
   @IsArray()
