@@ -7,7 +7,7 @@ import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { contactSchema } from './utils/create-contact-schema';
-import { zodBadRequestException } from 'src/shared/utils/zod-bad-request-exeption';
+import { zodBadRequestException } from '../shared/utils/zod-bad-request-exeption';
 
 @Injectable()
 export class ContactService {
