@@ -10,7 +10,7 @@ import {
 import { NewsletterService } from './newsletter.service';
 import { CreateNewsletterDto } from './dto/create-newsletter.dto';
 import { UpdateNewsletterDto } from './dto/update-newsletter.dto';
-
+import { ApiExcludeEndpoint } from '@nestjs/swagger';
 @Controller('newsletter')
 export class NewsletterController {
   constructor(private readonly newsletterService: NewsletterService) {}
@@ -21,16 +21,19 @@ export class NewsletterController {
   }
 
   @Get()
+  @ApiExcludeEndpoint()
   findAll() {
     return this.newsletterService.findAll();
   }
 
   @Get(':id')
+  @ApiExcludeEndpoint()
   findOne(@Param('id') id: string) {
     return this.newsletterService.findOne(id);
   }
 
   @Patch(':id')
+  @ApiExcludeEndpoint()
   update(
     @Param('id') id: string,
     @Body() updateNewsletterDto: UpdateNewsletterDto,
@@ -39,6 +42,7 @@ export class NewsletterController {
   }
 
   @Delete(':id')
+  @ApiExcludeEndpoint()
   remove(@Param('id') id: string) {
     return this.newsletterService.remove(id);
   }
