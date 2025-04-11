@@ -20,6 +20,7 @@ export const createLeadSchema = z.object({
   dandruff: z.string(),
   frizzType: z.string(),
   authKey: z.string(),
+  complement: z.string().optional(),
 });
 
 export type CreateLeadSchema = z.infer<typeof createLeadSchema>;

@@ -63,4 +63,7 @@ export class CreateLeadDto {
 
   @IsString()
   authKey: string;
+
+  @IsString()
+  complement?: string;
 }
