@@ -73,5 +73,5 @@ export class CreateLeadDto {
 
   @IsArray()
   @IsString({ each: true })
-  recommendedShops: string[];
+  productsSelected: string[];
 }

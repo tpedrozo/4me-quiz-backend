@@ -32,8 +32,8 @@ model Lead {
   updatedAt           DateTime @updatedAt
   number              String   @default("N/A")
   complement          String?  @default("")
+  productsSelected    String[]
   recommendedProducts String[]
-  recommendedShops    String[]
 }
 
 model Contact {
