@@ -66,4 +66,12 @@ export class CreateLeadDto {
 
   @IsString()
   complement?: string;
+
+  @IsArray()
+  @IsString({ each: true })
+  recommendedProducts: string[];
+
+  @IsArray()
+  @IsString({ each: true })
+  recommendedShops: string[];
 }

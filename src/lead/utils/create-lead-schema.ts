@@ -21,6 +21,8 @@ export const createLeadSchema = z.object({
   frizzType: z.string(),
   authKey: z.string(),
   complement: z.string().optional(),
+  recommendedProducts: z.array(z.string()),
+  recommendedShops: z.array(z.string()),
 });
 
 export type CreateLeadSchema = z.infer<typeof createLeadSchema>;

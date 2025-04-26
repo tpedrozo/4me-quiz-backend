@@ -21,6 +21,8 @@ export const updateLeadSchema = z.object({
   dandruff: z.string(),
   frizzType: z.string(),
   authKey: z.string(),
+  recommendedProducts: z.array(z.string()),
+  recommendedShops: z.array(z.string()),
 });
 
 export type UpdateLeadSchema = z.infer<typeof updateLeadSchema>;
