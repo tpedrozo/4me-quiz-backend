@@ -8,30 +8,32 @@ datasource db {
 }
 
 model Lead {
-  id              String   @id @default(uuid())
-  gender          String
-  name            String
-  email           String   @unique
-  phone           String
-  zipCode         String
-  address         String
-  age             String
-  complementary   String[]
-  goal            String[]
-  hairType        String
-  hairConsider    String
-  hairLength      String
-  washFrequency   String
-  chemicalProcess String[]
-  hairLoss        String
-  yourWireAre     String
-  dandruff        String
-  frizzType       String
-  authKey         String
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  number          String   @default("N/A")
-  complement      String?  @default("")
+  id                  String   @id @default(uuid())
+  gender              String
+  name                String
+  email               String   @unique
+  phone               String
+  zipCode             String
+  address             String
+  age                 String
+  complementary       String[]
+  goal                String[]
+  hairType            String
+  hairConsider        String
+  hairLength          String
+  washFrequency       String
+  chemicalProcess     String[]
+  hairLoss            String
+  yourWireAre         String
+  dandruff            String
+  frizzType           String
+  authKey             String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  number              String   @default("N/A")
+  complement          String?  @default("")
+  recommendedProducts String[]
+  recommendedShops    String[]
 }
 
 model Contact {
